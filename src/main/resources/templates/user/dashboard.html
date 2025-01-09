@@ -1,0 +1,39 @@
+
+<!doctype html>
+<html lang="en" xmlns="http://www.thymeleaf.org" th:replace="~{base::parent(~{::#content},~{::title},~{::script})}">
+<head>
+	<title th:text="${loggedInUser.name+'|Dashboard'}">user dashboard Page</title>	
+</head>
+<body>
+	<div id="content">
+		<!--if user is logged in then sidebar-->
+		<div  th:if="${loggedInUser}">
+			
+			<div th:replace="~{user/sidebar::sidebar}"></div>
+		</div>	
+		
+	
+   <div  class="pl-64 pt-20" style="height: 1000px;">
+	<div class="flex justify-center flex-col items-center">
+	<h1>this is user dashboard page</h1>
+		<h1 th:text="${loggedInUser.name}"></h1>
+		<h1 th:text="${loggedInUser.email}"></h1>
+	<!--the following div only see if user is logged in otherwise it will not see-->
+	<div th:if="${loggedInUser}">
+		<h1>user is looged in</h1>
+		<h1>this is user login section</h1>
+		
+	</div>
+	
+</div>
+</div>
+</div>
+<script>
+	
+	console.log("user profile page");
+</script>
+	
+
+	
+</body>
+</html>

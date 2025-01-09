@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.thymeleaf.org" th:replace="~{base::parent(~{::#content},~{::title},~{::script})}">
+<head>
+	<title>login Page</title>	
+</head>
+
+<body>
+<div id="content" class="pt-20">
+	<div class="grid grid-cols-12">
+				<div class="col-span-4 md:col-span-2 lg:col-span-3 xl:col-span-4"></div>
+				<div class="col-span-12 md:col-span-8 lg:col-span-6 xl:col-span-4">
+					<div
+						class="block max-w-sm p-6 border-t-8 border-green-700  bg-white   rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-blue-700 dark:hover:bg-gray-700">
+
+						<!--message box-->
+						<div  data-th-replace="message::messagebox"></div>
+						
+						<div class="text-red-900 text-center" th:if="${param.error}">!Invalid Username or Password</div>
+						<div class="text-orange-800 text-center" th:if="${param.logout}">you have been logged out</div>
+						<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Login Here</h5>
+						<!--method="post"-->
+						<!--form started-->
+						<form method="post" th:action="@{'/authenticate'}"   class="mt-5">
+							
+					<!--clientid:		52341669908-vla465j6go6f988jb5pn4njc4dsd5nba.apps.googleusercontent.com-->
+                    <!--lient secret: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-->
+							<!--username -->
+							<div class="mb-5">
+								<label for="email"
+									class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+								<input type="email" id="email" name="email"
+									class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+									placeholder="Enter Your Email" required />
+							</div>
+							<!--password-->
+							<div class="mb-5">
+								<label for="password"
+									class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+								<input type="password" id="password" name="password"
+									class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+									placeholder="Enter Your Password" required />
+							</div>
+
+							
+	                        
+							
+							
+							
+							<!--buttons-->
+							<div class="mb-5 flex justify-center space-x-3">
+								<button type="submit" class="px-3 py-2 rounded bg-gray-800 text-white dark:bg-blue-900 ">Login</button>
+								<button type="reset" class="px-3 py-2 rounded bg-red-800 text-white dark:bg-red-900 ">Reset</button>
+								
+							</div>
+						</form>
+						<div class="social-buttons-container flex justify-center">
+							<a class="border px-3 py-2 login-with-google-btn"  th:href="@{'/oauth2/authorization/google'}">login with google</a>
+							
+							
+						</div>
+					</div>
+				</div>
+			</div>
+	
+	
+</div>
+<script>
+	
+	console.log("login page");
+</script>
+	
+
+	
+</body>
+</html>

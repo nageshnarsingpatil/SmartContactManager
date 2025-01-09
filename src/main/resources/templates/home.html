@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.thymeleaf.org" th:replace="~{base::parent(~{::#content},~{::title},~{::script})}">
+<head>
+    <title>Home Page</title>  
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white">
+
+<div id="content" class="flex justify-center items-start min-h-screen bg-gray-50 dark:bg-gray-800 pt-20">
+
+    <!-- Content Section -->
+    <div class="text-center max-w-md w-full ">
+        <!-- Image -->
+        <img th:src="@{'/img/banner.jpg'}" alt="Center Image" class="mx-auto mb-6 w-68 h-68 object-cover">
+
+        <!-- Heading -->
+        <h1 class="text-3xl font-bold text-gray-800 dark:text-white mb-4">Start Managing your contacts on cloud</h1>
+
+        <!-- Paragraph -->
+        <p class="text-gray-600 dark:text-gray-300 text-lg mb-6">
+            Effortlessly manage and store your contacts in the cloud. With our platform, you can access your contacts anytime, anywhere, and keep them safe and organized. Sync your contacts across all devices and ensure seamless communication, whether for personal or business use.
+        </p>
+
+        <!-- Sign Up and Login Buttons -->
+        <div class="flex justify-center space-x-4">
+            <a th:href="@{'/register'}" class="bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 transition duration-300 dark:bg-blue-600 dark:hover:bg-blue-500">Sign Up</a>
+            <a href="/login" class="bg-gray-500 text-white py-2 px-6 rounded-lg hover:bg-gray-600 transition duration-300 dark:bg-gray-700 dark:hover:bg-gray-600">Login</a>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    console.log("home page");
+</script>
+
+</body>
+</html>
